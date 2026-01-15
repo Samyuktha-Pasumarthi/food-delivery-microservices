@@ -1,0 +1,44 @@
+
+/* ===== USER AVATAR AREA ===== */
+
+/* ===== USER SECTION ===== */
+
+.user-avatar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+/* Avatar image */
+.user-avatar img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  transition: transform 0.2s ease;
+}
+
+.user-avatar:hover img {
+  transform: scale(1.08);
+}
+
+/* Username text */
+.username {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+  white-space: nowrap;
+}
+
+.username {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Hide username on small screens */
+@media (max-width: 600px) {
+  .username {
+    display: none;
+  }
+}

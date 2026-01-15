@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+/* ===== GLOBAL HEADER STYLES ===== */
+
+/* ===== GLOBAL HEADER LAYOUT ===== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background:
+    conic-gradient(
+      #ff885d 0deg 90deg,
+      #ffffff 90deg 180deg,
+      #ff885d 180deg 270deg,
+      #ffffff 270deg 360deg
+    );
+  background-size: 40px 40px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-logo {
+  font-family: 'Anton', sans-serif;
+ 
+  letter-spacing: 1.5px;
+}
+
+.header-logo {
+  font-size: 32px;
+  font-weight: 800;
+  color: #000000;
+  
+  cursor: pointer;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .header-container {
+    padding: 12px 16px;
+  }
+}

@@ -1,0 +1,43 @@
+<div class="order-summary">
+
+  <h1 class="title">Order Summary</h1>
+
+  <table class="order-table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of orderItems">
+        <td>{{ item.itemName }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>₹ {{ item.price }}</td>
+      </tr>
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td colspan="2" class="total-label">Total</td>
+        <td class="total-price">₹ {{ total }}</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <div class="btn-wrapper">
+    <button class="place-order-btn" (click)="placeOrder()">Place Order</button>
+  </div>
+
+  <!-- Success Dialog -->
+  <div class="dialog-backdrop" *ngIf="showDialog">
+    <div class="dialog-box">
+      <h2>Order Placed 🎉</h2>
+      <p>Your order has been placed successfully.</p>
+      <button class="close-btn" (click)="closeDialog()">Close</button>
+    </div>
+  </div>
+
+</div>

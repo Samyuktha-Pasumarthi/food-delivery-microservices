@@ -1,0 +1,11 @@
+spring:
+  data:
+    mongodb:
+      url: mongodb://mongo:27017/orderdb
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-0.eureka-service.default.svc.cluster.local:8761/eureka/
+  instance:
+    prefer-ip-address: true

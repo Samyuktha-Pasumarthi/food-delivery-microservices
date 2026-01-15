@@ -1,0 +1,78 @@
+services:
+
+  mysql:
+    image: mysql:8
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: userdb
+
+
+
+
+  mongo:
+    image: mongo:6
+    container_name: mongo
+    ports:
+      - "27017:27017"
+
+  eureka-server:
+    image: samyuktha11/eureka-server:0.0.1
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+
+  user-service:
+    image: samyuktha11/user-service:latest1
+    container_name: user-service
+    ports:
+      - "8081:9093"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      - mysql
+      - eureka-server
+
+  restaurant-listing-service:
+    image: samyuktha11/restaurant-listing-service:latest1
+    container_name: restaurant-listing-service
+    ports:
+      - "8083:9091"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      - mysql
+      - eureka-server
+
+  food-catalogue-service:
+    image: samyuktha11/food-catalogue-service:latest1
+    container_name: food-catalogue-service
+    ports:
+      - "8084:9092"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      - mysql
+      - eureka-server
+
+  order-service:
+    image: samyuktha11/order-service:latest1
+    container_name: order-service
+    ports:
+      - "8082:9094"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      - mongo
+      - eureka-server
+
+  frontend:
+    image: samyuktha11/food-delivery-app:latest1
+    container_name: frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - user-service
+      - order-service
+      - restaurant-listing-service
+      - food-catalogue-service
