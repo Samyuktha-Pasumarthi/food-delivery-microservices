@@ -27,20 +27,20 @@ jobs:
 
       - name: Build Food Catalogue Service
         run: |
-          cd ../foodcatalogue
+          cd foodcatalogue
           mvn clean install
 
       - name: Build Order Service
         run: |
-          cd ../order
+          cd order
           mvn clean install
 
       - name: Build Restaurant Service
         run: |
-          cd ../restaurantlisting
+          cd restaurantlisting
           mvn clean install
 
       - name: Build User Service
         run: |
-          cd ../userinfo
+          cd userinfo
           mvn clean install
