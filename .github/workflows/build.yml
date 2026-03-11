@@ -18,8 +18,12 @@ jobs:
           distribution: 'temurin'
           java-version: '25'
 
-      - name: Build project
-        run: mvn clean install
+      - name: Build restaurant service
+        run: |
+          cd restaurantlisting
+          mvn clean install
 
       - name: Run tests
-        run: mvn test
+        run: |
+          cd restaurantlisting
+          mvn test
