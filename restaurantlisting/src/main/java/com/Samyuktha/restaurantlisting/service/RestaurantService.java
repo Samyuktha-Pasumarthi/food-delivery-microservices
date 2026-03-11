@@ -30,18 +30,18 @@ public class RestaurantService {
 
     public RestaurantDTO addRestaurantInDB(RestaurantDTO restaurantDTO) {
 
-        // 1️⃣ Map DTO → Entity
+        //  Map DTO → Entity
         Restaurant restaurant =
-                restaurantMapper.mapRestaurantDTOToRestaurant(restaurantDTO);
+                RestaurantMapper.INSTANCE.mapRestaurantDTOToRestaurant(restaurantDTO);
 
-        // 2️⃣ Force CREATE (important)
+        // Force CREATE (important)
         restaurant.setId(null);
 
-        // 3️⃣ Save
+        // Save
         Restaurant savedRestaurant = restaurantRepo.save(restaurant);
 
-        // 4️⃣ Map back to DTO
-        return restaurantMapper.mapRestaurantToRestaurantDTO(savedRestaurant);
+        // Map back to DTO
+        return RestaurantMapper.INSTANCE.mapRestaurantToRestaurantDTO(savedRestaurant);
     }
 
 
