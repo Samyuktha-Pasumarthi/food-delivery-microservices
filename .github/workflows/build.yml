@@ -33,7 +33,7 @@ jobs:
       - name: Build Order Service
         run: |
           cd order
-          mvn clean install -DskipTests
+          mvn clean install 
 
       - name: Build Restaurant Service
         run: |
