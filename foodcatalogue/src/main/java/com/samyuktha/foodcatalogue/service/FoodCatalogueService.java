@@ -22,7 +22,7 @@ public class FoodCatalogueService {
 
 
     public FoodItemDTO addFoodItem(FoodItemDTO foodItemDTO) {
-        FoodItem foodItemSavedinDB =foodItemRepo.save(FoodItemMapper .INSTANCE.mapFromFoodItemDTOtoFoodItem(foodItemDTO));
+        FoodItem foodItemSavedinDB =foodItemRepo.save(FoodItemMapper.INSTANCE.mapFromFoodItemDTOtoFoodItem(foodItemDTO));
         return FoodItemMapper.INSTANCE.mapFromFoodItemtoFoodItemDTO(foodItemSavedinDB);
     }
 
