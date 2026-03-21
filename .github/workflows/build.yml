@@ -43,4 +43,4 @@ jobs:
       - name: Build User Service
         run: |
           cd userinfo
-          mvn clean install -DskipTests
+          mvn clean install 
