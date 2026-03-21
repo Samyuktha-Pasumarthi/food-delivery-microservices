@@ -3,6 +3,8 @@ spring:
     url: jdbc:mysql://mysql:3306/foodcataloguedb
     username: root
     password: root
+    hikari:
+      initialization-fail-timeout: 60000
 
 eureka:
   client:
