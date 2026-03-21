@@ -17,7 +17,7 @@ public class SequenceGenerator {
     @Autowired
     private MongoOperations mongoOperations;
 
-    public int generateNextOrderId(){
+    public  int generateNextOrderId(){
 
         Sequence counter= mongoOperations.findAndModify(
                 query(where("_id").is("sequence")),
