@@ -65,8 +65,8 @@ jobs:
 
       - name: Build & Push Food Catalogue Image
         run: |
-          docker build -t samyuktha11/food-catalogue-service:latest11 ./foodcatalogue
-          docker push samyuktha11/food-catalogue-service:latest
+          docker build -t samyuktha11/food-catalogue-service:latest1 ./foodcatalogue
+          docker push samyuktha11/food-catalogue-service:latest1
 
       - name: Build & Push Order Image
         run: |

@@ -28,3 +28,18 @@ jobs:
       - name: Build Angular app
         working-directory: food-delivery-app
         run: npm run build
+      # ---------------- DOCKER LOGIN ----------------
+      - name: Login to DockerHub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      # ---------------- BUILD & PUSH IMAGE ----------------
+      - name: Build Docker image
+        run: |
+          docker build -t samyuktha11/food-delivery-app:latest1 ./food-delivery-app
+
+      - name: Push Docker image
+        run: |
+          docker push samyuktha11/food-delivery-app:latest1
